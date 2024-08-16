@@ -68,6 +68,28 @@ ul.login li.logo-item {
     box-shadow: 0 0 10px 5px green; /* Green glow effect */
 }
 
+.appsub_btn{
+    height: 45px;
+    width: 145px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    text-align: center;
+    margin: 20px auto; 
+    margin-bottom: 70px;
+    cursor: pointer;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    box-shadow: 0 0 10px 5px gray;
+}
+
+.appsub_btn:hover{
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 
 
 

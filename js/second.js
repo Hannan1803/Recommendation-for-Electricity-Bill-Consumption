@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 clickedElement.style.boxShadow = '0px 4px 8px rgba(5, 5, 5, 0.5)';
             }
         }
-        
+        console.log("CHECKED ID:", checkbox.checked);
         console.log("Clicked ID:", clickedElement.id);
     });
 });
