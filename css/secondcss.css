@@ -92,5 +92,21 @@ ul.login li.logo-item {
 }
 
 
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Style input fields when they are focused */
+input[type="number"]:focus {
+    border-color: #4CAF50; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
 
 
