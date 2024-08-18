@@ -34,17 +34,17 @@ ul.login li.logo-item {
     align-items: center; /* Center images vertically if needed */
     padding: 20px; 
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
-    width: 100%; /* Full width of the viewport */
-    max-width: 2000px; /* Increase maximum width to fit more images */
-    margin: 0 auto; /* Center the container horizontally */
+    width: 100%; 
+    max-width: 2000px; 
+    margin: 0 auto; 
     margin-bottom: 15px;
-    box-sizing: border-box; /* Include padding in the width calculation */
+    box-sizing: border-box; 
 }
 
 .luffy {
     height: 200px;
     width: 200px;
-    margin: 10px; /* Add spacing between images */
+    margin: 10px; 
 }
 
 .luffy:hover{
@@ -54,7 +54,8 @@ ul.login li.logo-item {
 .images{
     text-align: center;
     padding: auto;
-    transition: box-shadow 0.3s ease; /* Smooth transition for the glow effect */
+    margin: 5px;
+    transition: box-shadow 0.3s ease; 
 }
 
 .images:hover{
@@ -65,7 +66,7 @@ ul.login li.logo-item {
 }
 
 .images.glow {
-    box-shadow: 0 0 10px 5px green; /* Green glow effect */
+    box-shadow: 0 0 10px 5px green; 
 }
 
 .appsub_btn{
