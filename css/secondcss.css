@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Poppins';
 }
 
 .container {
@@ -69,6 +70,10 @@ ul.login li.logo-item {
     box-shadow: 0 0 10px 5px green; 
 }
 
+.images.glow2 {
+    box-shadow: 0 0 10px 5px red; 
+}
+
 .appsub_btn{
     height: 45px;
     width: 145px;
@@ -106,6 +111,10 @@ input[type="number"] {
 input[type="number"]:focus {
     border-color: #4CAF50; /* Change border color on focus */
     outline: none; /* Remove default outline */
+}
+
+h1{
+    filter: drop-shadow(2px 2px 2px rgba(0,1,1,0.1));
 }
 
 

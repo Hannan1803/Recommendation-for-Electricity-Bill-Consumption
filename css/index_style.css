@@ -81,6 +81,13 @@ ul.login li.login-text {
     box-shadow: 0px 0px 5px 0px gray;
 }
 
+.sub_btn.locked {
+    background-color: red;
+    color: white;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 .sub_btn:hover {
     background-color: black;
     color: white;

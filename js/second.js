@@ -3,32 +3,40 @@ document.addEventListener('DOMContentLoaded', () => {
     container.addEventListener('click', function(event) {
         const clickedElement = event.target.closest('.images');
     
-        if (!clickedElement) return; // Ignore clicks outside .images elements
+        if (!clickedElement) return; 
         
         const checkbox = clickedElement.querySelector('input[type="checkbox"]');
         const qtyInput = clickedElement.querySelector('input[type="number"]');
 
+        qtyInput.addEventListener('input' , function(){
+                let value = qtyInput.value;
+                value = value.replace(/[^0-9.]/g, '');
+                const parsedValue = parseFloat(value);
+    
+                if (parsedValue <= 0 || isNaN(parsedValue)) {
+                    qtyInput.value = '';
+                } else {
+                    qtyInput.value = value;
+                }
+        });
+
         if (event.target === qtyInput) {
-            // If the quantity input box is clicked
             clickedElement.classList.add('glow');
-            qty.classList.add('glow');
-            console.log("authiten")
+            qtyInput.classList.add('glow');
             return
         }
         if (event.target.type === 'checkbox') {
-            // If the checkbox is clicked, do not affect the glow directly
             if (checkbox.checked) {
                 clickedElement.classList.add('glow');
-            } else {
-                //clickedElement.classList.remove('glow');
-            }
+            } 
         } else {
-            // If the image or description is clicked
             if (clickedElement.classList.contains('glow')) {
-                // If glow is already on, remove the glow and uncheck the checkbox
-                //clickedElement.style.boxShadow = '';
                 clickedElement.classList.remove('glow');
-                if (checkbox) checkbox.checked = false;
+                qtyInput.value = '';
+                if (checkbox){
+                    checkbox.checked = false;
+                    
+                }
             } else {
                 //clickedElement.style.boxShadow = '0px 4px 8px rgba(5, 5, 5, 0.5)';
                 clickedElement.classList.add('glow');
