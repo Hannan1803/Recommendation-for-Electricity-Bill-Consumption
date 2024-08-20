@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    alert("FILL ALL DETAILS TO PROCEED TO THE NEXT PAGE")
+    alert("PLEASE FILL ALL DETAILS TO PROCEED TO THE NEXT PAGE")
     const stDateInput = document.querySelector('.st_date');
     const currentDateInput = document.querySelector('.current_date');
     const endDateInput = document.querySelector('.end_date');
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
             submitButton.style.color = ''; 
             submitButton.style.cursor = 'pointer'; 
             submitButton.style.pointerEvents = 'auto'; 
-            unitInput.style.borderColor = ''; 
+            unitInput.style.borderColor = '';
         }
     }
 
