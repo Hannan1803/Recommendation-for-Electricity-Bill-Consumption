@@ -1,5 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.mid');
+    const searchBox = document.getElementById('searchBox');
+    const applianceContainer = document.getElementById('applianceContainer');
+    const noResultsMessage = document.getElementById("noResults");
+    //noResultsMessage.style.display='block';
+    
+
+    searchBox.addEventListener('input', () => {
+        const searchTerm = searchBox.value.toLowerCase();
+        const appliances = applianceContainer.querySelectorAll('.images');
+        let anyMatch = false;
+
+        appliances.forEach(appliance => {
+            const applianceName = appliance.querySelector('h5').textContent.toLowerCase();
+            if (applianceName.includes(searchTerm)) {
+                appliance.style.display = '';
+                anyMatch = true;
+            } else {
+                console.log(noResultsMessage)
+                appliance.style.display = 'none';
+            }
+        });
+        noResultsMessage.style.display = anyMatch ? 'none' : 'block';
+    });
+
     container.addEventListener('click', function(event) {
         const clickedElement = event.target.closest('.images');
     
