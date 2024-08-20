@@ -19,10 +19,17 @@
         </ul>
         <h1 style="text-align: center;">SELECT APPLIANCES</h1>
     </div>
+    <div class="container-fluid">
+        <div class="search-container">
+            <input type="text" id="searchBox" class="search-box" placeholder="Search...">
+            <div id="results" class="results"></div>
+        </div>
+    </div>
 
     <div class="container-fluid">
-        <div class="mid mx-auto mt-3 p-4  bg-light">   
+        <div id="applianceContainer" class="mid mx-auto mt-3 p-4  bg-light">   
                 <div class="images" id="air-conditioner">
+                    
                     <img src="../images/appl/ac.jpg" class="luffy" alt="Air Conditioner">
                     <h5 style="text-align: center;">AIR CONDITIONER</h5>
                     <input type="checkbox" id="air-conditioner-checkbox"> <label for="air-conditioner-checkbox" class="toggle-label">CONSTANT</label>
@@ -420,6 +427,40 @@
                     <br>
                     <input type="number" id="wireless-router-quantity" placeholder="Enter Quantity">
                 </div>
+
+                <div class="images" id="water-motor">
+                    <img src="../images/appl/water_motor.webp" class="luffy" alt="Water Motor">
+                    <h5 style="text-align: center;">WATER MOTOR</h5>
+                    <input type="checkbox" id="water-motor-checkbox"> <label for="water-motor-checkbox" class="toggle-label">CONSTANT</label>
+                    <br>
+                    <input type="number" id="water-motor-quantity" placeholder="Enter Quantity">
+                </div>
+
+                <div class="images" id="tube-light">
+                    <img src="../images/appl/tube_light.webp" class="luffy" alt="Tube Light">
+                    <h5 style="text-align: center;">TUBE LIGHT</h5>
+                    <input type="checkbox" id="tube-light-checkbox"> <label for="tube-light-checkbox" class="toggle-label">CONSTANT</label>
+                    <br>
+                    <input type="number" id="tube-light-quantity" placeholder="Enter Quantity">
+                </div>
+
+                <div class="images" id="ups-battery">
+                    <img src="../images/appl/ups.png" class="luffy" alt="Ups Battery">
+                    <h5 style="text-align: center;">UPS BATTERY</h5>
+                    <input type="checkbox" id="ups-battery-checkbox"> <label for="ups-battery-checkbox" class="toggle-label">CONSTANT</label>
+                    <br>
+                    <input type="number" id="ups-battery-quantity" placeholder="Enter Quantity">
+                </div>
+
+                <div class="images" id="computer">
+                    <img src="../images/appl/computer.jpg" class="luffy" alt="computer">
+                    <h5 style="text-align: center;">COMPUTER</h5>
+                    <input type="checkbox" id="computer-checkbox"> <label for="computer-checkbox" class="toggle-label">CONSTANT</label>
+                    <br>
+                    <input type="number" id="computer-quantity" placeholder="Enter Quantity">
+                </div>
+
+                <div id="noResults" style="display: none;">No elements found</div>
            
         </div>
 
