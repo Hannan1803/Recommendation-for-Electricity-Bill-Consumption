@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Add event listeners to all date and unit input fields
     [stDateInput, currentDateInput, endDateInput, unitInput].forEach(input => {
         input.addEventListener('input', validateForm);
     });
