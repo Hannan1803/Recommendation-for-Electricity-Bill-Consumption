@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const stDateInput = document.querySelector('.st_date');
     const currentDateInput = document.querySelector('.current_date');
     const endDateInput = document.querySelector('.end_date');
-    const unitInput = document.querySelector('.unit');
     const submitButton = document.getElementById('submitBtn');
+    const unitInput = document.querySelector('.unit');
+    
 
     function validateForm() {
         const isDateEmpty = !stDateInput.value || !currentDateInput.value || !endDateInput.value;
@@ -32,7 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     submitButton.addEventListener('click', function() {
         window.location.href = '../html/second.html';
+        const unitValue = unitInput.value;
+        window.location.href = `../html/second.html?unitValue=${encodeURIComponent(unitValue)}`;
     });
-
     validateForm();
 });
