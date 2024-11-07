@@ -114,3 +114,59 @@ ul.login li.login-text {
     display: block;
     margin: 0 auto; /* Centers the image */
 }
+
+.radio-container input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkmark appearance */
+.radio-container {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+}
+
+/* Style the checkmark */
+.radio-container .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #ccc;
+    border-radius: 50%;
+    border: 2px solid #000;  /* Add border to give a classic look */
+}
+
+/* When the radio button is checked, add a blue dot */
+.radio-container input:checked ~ .checkmark {
+    background-color: #5fb0b6;
+    border: 2px solid #379194;
+}
+
+/* Add a blue circle inside the checkmark */
+.radio-container .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the inner circle of the radio button */
+.radio-container .checkmark:after {
+    top: 6px;
+    left: 5.5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+}
