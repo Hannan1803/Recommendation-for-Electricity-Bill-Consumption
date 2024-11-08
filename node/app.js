@@ -13,6 +13,7 @@ app.use('../js', express.static(path.join(__dirname, '../js')));
 
 let p_sum;
 let total_sum;
+let sly;
 // Load the dataset from the Excel file
 const workbook = xlsx.readFile('../node/Modified_DATASET_with_all_appliances.xlsx');
 const sheetName = workbook.SheetNames[0];
@@ -135,6 +136,7 @@ app.post('/predict-unit', (req, res) => {
     console.log('Predict Unit request received');
     // Extract the data sent by the frontend
     const { num_rooms, num_people, is_ac, is_tv, is_flat, ave_monthly_income, num_children } = req.body;
+    sly = req.body.ave_monthly_income;
 
     const inputData = { num_rooms, num_people, is_ac, is_tv, is_flat, ave_monthly_income, num_children };
 
@@ -169,6 +171,7 @@ app.post('/predict-unit', (req, res) => {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
+                        salary : sly,
                         predicted_value_for_url : p_sum,
                         static_value_for_url : total_sum
                     }),
@@ -192,13 +195,15 @@ app.post('/predict-unit', (req, res) => {
 app.post('/url-function', (req, res) => {
     //console.log('Full Request Body:', req.body);
     // Extract the data sent by the frontend (or wherever the request is coming from)
-    const { 
+    const {
+        salary : sly,
         predicted_value_for_url : p_sum,
         static_value_for_url : total_sum// Rename to match expected key
     } = req.body;
 
     // Prepare the input data to be sent to the Python script
     const inputData = {
+        salary : sly,
         predicted_value_for_url : p_sum,
         static_value_for_url : total_sum
     };
@@ -216,7 +221,6 @@ app.post('/url-function', (req, res) => {
     // Capture the output data (prediction result) from Python
     pythonProcess.stdout.on('data', (data) => {
         resultData += data.toString();
-        //console.log(resultData)
     });
 
     // Capture any error messages from Python

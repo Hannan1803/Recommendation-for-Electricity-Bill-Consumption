@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var units_4;
     var units_5;
     var units_6;
+    var units_7;
 
     console.log(people_val, children_val, avg_income, send_flat , no_room);
 
@@ -138,18 +139,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentDate: cdate,
                 endDate: edate,
                 consumedUnit: unitValue,
-                usageSlabs: [100, 400, 600, 800, 2000, 5000] // Request optimal usage for these unit slabs
+                usageSlabs: [100, 200, 400, 500, 600, 800, 1000] // Request optimal usage for these unit slabs
             }),
         })
         .then(response => response.json())
         .then(data => {
             sugg = data.optimalUsage;
             units_1 = sugg['Slab 100 units'];
-            units_2 = sugg['Slab 400 units'];
-            units_3 = sugg['Slab 600 units'];
-            units_4 = sugg['Slab 800 units'];
-            units_5 = sugg['Slab 2000 units'];
-            units_6 = sugg['Slab 5000 units'];
+            units_2 = sugg['Slab 200 units'];
+            units_3 = sugg['Slab 400 units'];
+            units_4 = sugg['Slab 500 units'];
+            units_5 = sugg['Slab 600 units'];
+            units_6 = sugg['Slab 800 units'];
+            units_7 = sugg['Slab 1000 units'];
             console.log('Optimized Usage for Slabs:', units_1);
 
             fetch('http://localhost:3000/optimize', {
@@ -214,9 +216,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     const u4 = jsonToString(units_4);
                     const u5 = jsonToString(units_5);
                     const u6 = jsonToString(units_6);
+                    const u7 = jsonToString(units_7);
                     console.log(u1);
                     console.log("Itha da predicted ku vanthathu :" , predicted_sum);
-                    const url = `../html/result.html?static_sum=${encodeURIComponent(static_sum)}&predicted_sum=${encodeURIComponent(predicted_sum)}&final_url1=${encodeURIComponent(final_url1)}&u1=${encodeURIComponent(u1)}&u2=${encodeURIComponent(u2)}&u3=${encodeURIComponent(u3)}&u4=${encodeURIComponent(u4)}&u4=${encodeURIComponent(u4)}&u5=${encodeURIComponent(u5)}&u6=${encodeURIComponent(u6)}`;
+                    const url = `../html/result.html?static_sum=${encodeURIComponent(static_sum)}&predicted_sum=${encodeURIComponent(predicted_sum)}&final_url1=${encodeURIComponent(final_url1)}&u1=${encodeURIComponent(u1)}&u2=${encodeURIComponent(u2)}&u3=${encodeURIComponent(u3)}&u4=${encodeURIComponent(u4)}&u4=${encodeURIComponent(u4)}&u5=${encodeURIComponent(u5)}&u6=${encodeURIComponent(u6)}&u7=${encodeURIComponent(u7)}`;
                     window.location.href = url;
                 }) 
             })

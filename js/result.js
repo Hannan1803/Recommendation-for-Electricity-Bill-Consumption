@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const unit4 = document.querySelector('.unit4');
     const unit5 = document.querySelector('.unit5');
     const unit6 = document.querySelector('.unit6');
+    const unit7 = document.querySelector('.unit7');
 
 
     const params = new URLSearchParams(window.location.search);
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const u4 = params.get('u4');
     const u5 = params.get('u5');
     const u6 = params.get('u6');
+    const u7 = params.get('u7');
 
     console.log("This is from the front-end js : " , u1);
 
@@ -42,12 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
         ml_image.src = final_url1;
     }
 
-    unit1.innerHTML = "<h1>100 units slab :</h1> " + u1;
-    unit2.innerHTML = "<h1>400 units slab :</h1> " + u2;
-    unit3.innerHTML = "<h1>600 units slab :</h1> " + u3;
-    unit4.innerHTML = "<h1>800 units slab :</h1> " + u4;
-    unit5.innerHTML = "<h1>2000 units slab :</h1> " + u5;
-    unit6.innerHTML = "<h1>5000 units slab :</h1> " + u6;
+    unit1.innerHTML = "<h1>0-100 units slab :</h1> " + u1;
+    unit2.innerHTML = "<h1>101-200 units slab :</h1> " + u2;
+    unit3.innerHTML = "<h1>201-400 units slab :</h1> " + u3;
+    unit4.innerHTML = "<h1>401-500 units slab :</h1> " + u4;
+    unit5.innerHTML = "<h1>501-600 units slab :</h1> " + u5;
+    unit6.innerHTML = "<h1>601-800 units slab :</h1> " + u6;
+    unit7.innerHTML = "<h1>1000 > units slab : </h1>" + u7;
 
 
 });
